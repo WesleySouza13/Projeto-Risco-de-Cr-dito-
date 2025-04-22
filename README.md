@@ -62,3 +62,15 @@ E assim por diante.
 # Análise descritiva e Univariada 
 
 Nesta etapa, realizamos uma exploração inicial dos dados com foco em entender as características individuais de cada variável (análise univariada). O objetivo é identificar padrões, tendências, outliers e possíveis problemas nos dados, como valores ausentes ou distribuições assimétricas.
+
+# Análise Bivariada 
+
+Na parte de análise bivariada, busquei entender os comportamentos de clientes com base em seu gênero. Descobri fatores importantes que podem auxiliar na tomada de decisão, ou até entender a classificação do nosso modelo. Aqui vão as minhas descobertas:
+
+1 - em sua maioria, o genero costuma possuir um carro, é o masculino.
+2 - mulheres procuram possuir uma propriedade (casa, apartamento...) em seu nome.
+3 - muitas mulheres não possuem filhos, isso é uma maioria entre as que possui 1 ou mais filhos. 
+4 - homens costumam ter familias maiores em relação as mulheres. 
+5 - as mulheres são maioria em empregabilidade ou em grupos de estudandes. 
+6 - com a afirmação acima, as mulheres são maioria em questão de nivel de escolaridade em relação aos homens. 
+7 - as mulheres são maioria em cargos de alto nivel, como staff de vendas, medicina etc. Por outro lado, também são uma maioria esmagadora entre os cargos não informados(ou desempregados). 
