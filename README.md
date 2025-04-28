@@ -79,7 +79,7 @@ OBS: Com a analise de correlaçao, identifiquei que os dados nao possuem multico
 
 # Análise de Cluster
 
-Como os dados não possuiam rótulos definidos, precisei criar um agrupamento entre eles. O algoritmo que escolhi para a criação dos clusters, foi o KMEANS. O KMEANS apresenta fácil implementaçao, vizualizaçao de seus agrupamentos e centroides. 
+Como os dados não possuíam rótulos definidos, foi necessário criar um agrupamento entre eles. Para isso, escolhi o algoritmo KMeans, que apresenta fácil implementação, boa visualização dos agrupamentos e dos centróides.
 
 # Método do Cotovelo
 
@@ -91,7 +91,13 @@ Veja a imagem abaixo:
 
 ![image](https://github.com/user-attachments/assets/451da0af-be4a-428f-8ad5-f4586fb44fcd)
 
+# Silhouette Score
 
+Para definir com maior precisão a quantidade de clusters a ser utilizada, realizei um teste utilizando o Silhouette Score, disponível em sklearn.metrics.silhouette_score. Com essa abordagem, foi possível identificar de forma mais clara o número ideal de clusters para o projeto.
+
+![image](https://github.com/user-attachments/assets/10c66558-04d3-49a5-a0d3-6cff76bef863)
+
+Vemos que realmente o número de clusters ideal é k = 2, pois é o ponto onde apresenta a maior pontuação.
 
 
 
