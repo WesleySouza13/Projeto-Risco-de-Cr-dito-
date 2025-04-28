@@ -99,6 +99,30 @@ Para definir com maior precisão a quantidade de clusters a ser utilizada, reali
 
 Vemos que realmente o número de clusters ideal é k = 2, pois é o ponto onde apresenta a maior pontuação.
 
+# Teste Davies Bouldin - davies_bouldin_score
+
+Para ter certeza do nosso número ideal de clusters, fiz um teste de Davies-Bouldin, ou, pelo sklearn: sklearn.metrics.davies_bouldin_score.
+O teste consiste em avaliar o agrupamento com base no seu número ideal de clusters, tendo em vista um intervalo entre 0 e 1.
+Como assim? Vou explicar.
+
+Se o cluster k = 4 apresenta score de 3.677 no teste de Davies-Bouldin, quer dizer que ele é um agrupamento ruim, pois o ideal é estar entre 0 e 1.
+
+Vamos para outro exemplo, agora, com os nossos testes.
+
+Eu testei um cluster de k = 3, onde o teste de Davies-Bouldin indicou um score de 0.575.
+
+Está ruim? Não, mas posso fazer outro teste, agora com o número de clusters que definimos através do método do cotovelo e do Silhouette Score.
+
+Fazendo o teste de Davies-Bouldin com k = 2, consegui um score de 0.39. Bem melhor que o cluster anterior.
+
+Antes de finalizar essa análise de clusters, ainda testei os dados com dimensionalidade reduzida, utilizando PCA.
+
+Os resultados apresentaram um bom agrupamento através da visualização gráfica, mas um score ruim no teste de Davies-Bouldin (1.151).
+
+Veja abaixo: 
+
+![image](https://github.com/user-attachments/assets/a36df07e-1b73-4a20-9759-95c85d76dac8)
+
 
 
 
