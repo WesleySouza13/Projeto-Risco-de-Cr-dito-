@@ -139,9 +139,9 @@ Foi utilizado o StandardScaler para escalar as variáveis numéricas e o OneHotE
 
 # Treinamento e Métricas - primeira rodada 
 
-Os modelos foram treinados e validados normalmente. Porém, em nossos dados, havia um problema sério de desbalanceamento de classes. 
+Embora os modelos tenham sido treinados e validados normalmente, um problema sério foi identificado nos dados: o desbalanceamento de classes.
 
-A classe 1(paga conta) era majoritaria em relaçao a 0 (nao paga a conta) 
+A classe 1 (paga conta) era majoritária em relação à classe 0 (não paga a conta). Esse desbalanceamento pode ter um impacto significativo na performance do modelo, principalmente quando usamos métricas como acurácia, que pode ser enganada pela predominância da classe majoritária.
 
 Segue as metricas da primeira onda de treinamento:
 
@@ -158,6 +158,62 @@ XGBClassifier | 1.00 | 1.00 | 1.00 | 1.00 | 1.00
 DummyClassifier | 0.85 | 0.92 | 0.50 | 1.00 | 0.85
 
 AdaBoostClassifier | 1.00 | 1.00 | 1.00 | 1.00 | 1.00
+
+# Tratamento desbalanceamento de classes
+
+Para tratar o problema de desbalanceamento das classes, utilizei dois métodos bem conhecidos: Oversampling e Undersampling.
+
+# Oversampling
+O Oversampling consiste em gerar dados sintéticos para a classe minoritária, a fim de igualá-la à classe majoritária. O principal objetivo desse método é aumentar a representação da classe minoritária no dataset, criando exemplos artificiais. Em nosso trabalho, utilizamos o RandomOverSampling. 
+Esse método ajuda a evitar que o modelo se torne excessivamente tendencioso para a classe majoritária e melhora sua capacidade de aprender as características da classe minoritária.
+
+# Undersampling 
+
+O Undersampling faz o processo oposto: ele "corta" a classe majoritária para igualá-la à classe minoritária. Esse método reduz a quantidade de dados da classe majoritária para equilibrar o conjunto de dados. Embora simples, o undersampling pode resultar. No nosso projeto, utilizei o RandomUnderSampling. 
+
+
+#  Treinamento e Métricas - Segunda rodada (Over/Undersampling)
+
+Segue as métricas da nossa segunda rodada de treinamento: 
+
+Oversampling
+
+Modelo | Acurácia (acc) | F1-Score (f1) | ROC AUC (roc_auc) | Recall (recall) | Precisão (precision)
+
+DecisionTreeClassifier | 1.0 | 1.0 | 1.0 | 1.0 | 1.0
+
+RandomForestClassifier | 1.0 | 1.0 | 1.0 | 1.0 | 1.0
+
+LogisticRegression | 1.0 | 1.0 | 1.0 | 1.0 | 1.0
+
+XGBClassifier | 1.0 | 1.0 | 1.0 | 1.0 | 1.0
+
+DummyClassifier | 0.85 | 0.92 | 0.5 | 1.0 | 0.85
+
+AdaBoostClassifier | 1.0 | 1.0 | 1.0 | 1.0 | 1.0
+
+#Undersampling 
+
+Modelo | Acurácia (acc) | F1-Score (f1) | ROC AUC (roc_auc) | Recall (recall) | Precisão (precision)
+
+DecisionTreeClassifier | 1.0 | 1.0 | 1.0 | 1.0 | 1.0
+
+RandomForestClassifier | 1.0 | 1.0 | 1.0 | 1.0 | 1.0
+
+LogisticRegression | 1.0 | 1.0 | 1.0 | 1.0 | 1.0
+
+XGBClassifier | 1.0 | 1.0 | 1.0 | 1.0 | 1.0
+
+DummyClassifier | 0.15 | 0.0 | 0.5 | 0.0 | 0.0
+
+AdaBoostClassifier | 1.0 | 1.0 | 1.0 | 1.0 | 1.0
+
+Em resumo, os modelos apresentaram métricas muito altas em ambos os casos. Com isso, suspeitei de overfitting. 
+Para tratar o overfitting, decidi implementar o PCA na Pipeline de pré-processamento e treinamento do modelo, ainda com os dados com Over/Undersampling. 
+
+# Treinamento e Métricas (PCA - Over/Undersampling) 
+
+
 
 
 
