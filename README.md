@@ -176,7 +176,7 @@ O Undersampling faz o processo oposto: ele "corta" a classe majoritária para ig
 
 Segue as métricas da nossa segunda rodada de treinamento: 
 
-Oversampling
+# Oversampling - metricas 
 
 Modelo | Acurácia (acc) | F1-Score (f1) | ROC AUC (roc_auc) | Recall (recall) | Precisão (precision)
 
@@ -192,7 +192,7 @@ DummyClassifier | 0.85 | 0.92 | 0.5 | 1.0 | 0.85
 
 AdaBoostClassifier | 1.0 | 1.0 | 1.0 | 1.0 | 1.0
 
-#Undersampling 
+# Undersampling - metricas 
 
 Modelo | Acurácia (acc) | F1-Score (f1) | ROC AUC (roc_auc) | Recall (recall) | Precisão (precision)
 
@@ -213,8 +213,149 @@ Para tratar o overfitting, decidi implementar o PCA na Pipeline de pré-processa
 
 # Treinamento e Métricas (PCA - Over/Undersampling) 
 
+# Oversampling - PCA Metricas
+1. DecisionTreeClassifier (max_depth=4, min_samples_leaf=5, min_samples_split=10, random_state=42)
+Acurácia: 99.97%
 
+F1-Score: 99.98%
 
+ROC AUC: 99.89%
+
+Recall: 100%
+
+Precisão: 99.96%
+
+2. RandomForestClassifier (max_depth=5, min_samples_leaf=10)
+Acurácia: 99.97%
+
+F1-Score: 99.98%
+
+ROC AUC: 99.89%
+
+Recall: 100%
+
+Precisão: 99.96%
+
+3. LogisticRegression (C=0.01)
+Acurácia: 100%
+
+F1-Score: 100%
+
+ROC AUC: 100%
+
+Recall: 100%
+
+Precisão: 100%
+
+4. XGBClassifier (max_depth=3)
+Acurácia: 99.97%
+
+F1-Score: 99.98%
+
+ROC AUC: 99.89%
+
+Recall: 100%
+
+Precisão: 99.96%
+
+5. DummyClassifier (modelo simples para comparação)
+Acurácia: 84.87%
+
+F1-Score: 91.82%
+
+ROC AUC: 50%
+
+Recall: 100%
+
+Precisão: 84.87%
+
+6. AdaBoostClassifier (learning_rate=0.5, random_state=42)
+Acurácia: 99.97%
+
+F1-Score: 99.98%
+
+ROC AUC: 99.89%
+
+Recall: 100%
+
+Precisão: 99.96%
+
+# Undersampling - PCA Metricas 
+
+DecisionTreeClassifier (max_depth=4, min_samples_leaf=5, min_samples_split=10, random_state=42):
+
+Acurácia: 99.89%
+
+F1-Score: 99.94%
+
+ROC AUC: 99.79%
+
+Recall: 99.94%
+
+Precisão: 99.94%
+
+RandomForestClassifier (max_depth=5, min_samples_leaf=10):
+
+Acurácia: 99.97%
+
+F1-Score: 99.98%
+
+ROC AUC: 99.89%
+
+Recall: 100%
+
+Precisão: 99.96%
+
+LogisticRegression (C=0.01):
+
+Acurácia: 100%
+
+F1-Score: 100%
+
+ROC AUC: 100%
+
+Recall: 100%
+
+Precisão: 100%
+
+XGBClassifier (max_depth=3):
+
+Acurácia: 99.97%
+
+F1-Score: 99.98%
+
+ROC AUC: 99.89%
+
+Recall: 100%
+
+Precisão: 99.96%
+
+DummyClassifier:
+
+Acurácia: 15.13%
+
+F1-Score: 0%
+
+ROC AUC: 50%
+
+Recall: 0%
+
+Precisão: 0%
+
+AdaBoostClassifier (learning_rate=0.5, random_state=42):
+
+Acurácia: 99.97%
+
+F1-Score: 99.98%
+
+ROC AUC: 99.89%
+
+Recall: 100%
+
+Precisão: 99.96%
+
+Com a aplicação do PCA, observamos uma diminuição nas métricas extremamente altas obtidas nos primeiros treinamentos, tornando os modelos mais confiáveis e realistas.
+Para a escolha da abordagem a ser utilizada na modelagem final para produção, optei pelo uso de PCA + Oversampling. Isso porque, no undersampling, há uma perda significativa de informação ao reduzir a quantidade de dados da classe majoritária, o que pode comprometer a qualidade do modelo.
 
 
 
