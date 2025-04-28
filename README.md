@@ -146,11 +146,17 @@ A classe 1(paga conta) era majoritaria em relaçao a 0 (nao paga a conta)
 Segue as metricas da primeira onda de treinamento:
 
 Modelo | Acurácia (Acc) | F1-Score | ROC AUC | Recall | Precisão
+
 DecisionTreeClassifier | 1.00 | 1.00 | 1.00 | 1.00 | 1.00
+
 RandomForestClassifier | 1.00 | 1.00 | 1.00 | 1.00 | 1.00
+
 LogisticRegression | 1.00 | 1.00 | 1.00 | 1.00 | 1.00
+
 XGBClassifier | 1.00 | 1.00 | 1.00 | 1.00 | 1.00
+
 DummyClassifier | 0.85 | 0.92 | 0.50 | 1.00 | 0.85
+
 AdaBoostClassifier | 1.00 | 1.00 | 1.00 | 1.00 | 1.00
 
 
