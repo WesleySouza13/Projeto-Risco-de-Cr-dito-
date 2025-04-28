@@ -77,16 +77,18 @@ Na parte de análise bivariada, busquei entender os comportamentos de clientes c
 
 OBS: Com a analise de correlaçao, identifiquei que os dados nao possuem multicolinearidade. Com isso, temos dados praticamente ortogonais entre si, facilitando em uma possivel modelagem. 
 
-#Análise de Cluster
+# Análise de Cluster
 
 Como os dados não possuiam rótulos definidos, precisei criar um agrupamento entre eles. O algoritmo que escolhi para a criação dos clusters, foi o KMEANS. O KMEANS apresenta fácil implementaçao, vizualizaçao de seus agrupamentos e centroides. 
 
-#Método do Cotovelo
+# Método do Cotovelo
 
 Para definir de forma acertiva o número de clusters, utilizei o método do cotovelo.
 Ele consiste em testar x vezes vários "range" do agrupamento até que possamos descobrir um número ótimo de clusters. O que acontece é que, conforme a quantidade de vezes que o número de clusters aumenta, também minimiza o erro. O detalhe está em identificar em qual ponto o erro começa a despencar.
 No nosso caso, a divisão dos clusters ficou em k=2. 
+
 Veja a imagem abaixo: 
+
 ![image](https://github.com/user-attachments/assets/451da0af-be4a-428f-8ad5-f4586fb44fcd)
 
 
