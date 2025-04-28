@@ -74,3 +74,23 @@ Na parte de análise bivariada, busquei entender os comportamentos de clientes c
 5 - as mulheres são maioria em empregabilidade ou em grupos de estudandes. 
 6 - com a afirmação acima, as mulheres são maioria em questão de nivel de escolaridade em relação aos homens. 
 7 - as mulheres são maioria em cargos de alto nivel, como staff de vendas, medicina etc. Por outro lado, também são uma maioria esmagadora entre os cargos não informados(ou desempregados). 
+
+OBS: Com a analise de correlaçao, identifiquei que os dados nao possuem multicolinearidade. Com isso, temos dados praticamente ortogonais entre si, facilitando em uma possivel modelagem. 
+
+#Análise de Cluster
+
+Como os dados não possuiam rótulos definidos, precisei criar um agrupamento entre eles. O algoritmo que escolhi para a criação dos clusters, foi o KMEANS. O KMEANS apresenta fácil implementaçao, vizualizaçao de seus agrupamentos e centroides. 
+
+#Método do Cotovelo
+
+Para definir de forma acertiva o número de clusters, utilizei o método do cotovelo.
+Ele consiste em testar x vezes vários "range" do agrupamento até que possamos descobrir um número ótimo de clusters. O que acontece é que, conforme a quantidade de vezes que o número de clusters aumenta, também minimiza o erro. O detalhe está em identificar em qual ponto o erro começa a despencar.
+No nosso caso, a divisão dos clusters ficou em k=2. 
+Veja a imagem abaixo: 
+![image](https://github.com/user-attachments/assets/451da0af-be4a-428f-8ad5-f4586fb44fcd)
+
+
+
+
+
+
