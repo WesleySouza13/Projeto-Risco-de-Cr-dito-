@@ -123,6 +123,36 @@ Veja abaixo:
 
 ![image](https://github.com/user-attachments/assets/a36df07e-1b73-4a20-9759-95c85d76dac8)
 
+No final, decidi utilizar os clusters feitos com dados normais e k = 2. Com isso, temos o nosso target. 
+
+
+# Modelagem 
+# Seleção dos Modelos 
+
+Para fazer o nosso estudo, selecionei modelos de classificação clássicos e ensembles, como árvores de decisão, regressão logística, dummy, XGBoost, entre outros.
+
+Um detalhe que vale a pena destacar: utilizei o dummy como "pivô" entre os outros modelos, pois já sabemos que ele não aprende com os dados, mas "prediz" a classe majoritária.
+
+Para o pré-processamento e treinamento dos nossos modelos, utilizei as Pipes do sklearn, disponíveis em sklearn.pipeline.Pipeline.
+
+Foi utilizado o StandardScaler para escalar as variáveis numéricas e o OneHotEncoder para codificar as variáveis categóricas.
+
+# Treinamento e Métricas - primeira rodada 
+
+Os modelos foram treinados e validados normalmente. Porém, em nossos dados, havia um problema sério de desbalanceamento de classes. 
+
+A classe 1(paga conta) era majoritaria em relaçao a 0 (nao paga a conta) 
+
+Segue as metricas da primeira onda de treinamento:
+
+Modelo | Acurácia (Acc) | F1-Score | ROC AUC | Recall | Precisão
+DecisionTreeClassifier | 1.00 | 1.00 | 1.00 | 1.00 | 1.00
+RandomForestClassifier | 1.00 | 1.00 | 1.00 | 1.00 | 1.00
+LogisticRegression | 1.00 | 1.00 | 1.00 | 1.00 | 1.00
+XGBClassifier | 1.00 | 1.00 | 1.00 | 1.00 | 1.00
+DummyClassifier | 0.85 | 0.92 | 0.50 | 1.00 | 0.85
+AdaBoostClassifier | 1.00 | 1.00 | 1.00 | 1.00 | 1.00
+
 
 
 
